@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I love u 3000</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Happy Valentine's Day💖</h1>
+    <p>🎁🎀No matter what happens. May we live together forever., My Love🎁🎀</p>
+    <div class="container">
+    <div class="surprise-text">นี่คือของขวัญ Valentine's Day ที่เค้าทำขึ้นมาเอง ใช้เวลาทั้งหมด 1 วัน 2ชั่วโมง 12 นาที 
+        เค้าอาจจะทำไม่สวยเเต่เค้าตั้งทำให้เธอมากๆ เค้าไม่รู้จะตอบเเทนความน่ารักของเธอยังไงดี เค้าคิดอยู่นานมากว่าแบบจะทำได้หรอ 
+        ก็ไม่คิดว่าการลองผิดลองถูกของ เค้าทำเป็นชิ้นงานนี้ขึ้นมาได้ เค้าจะบอกว่าเค้าภูมิใจในตัวเธอมากๆเลยเเละตัวเค้าเองด้วย 
+        สุดท้ายนี้เค้าอยากให้เธออยู่เป็นของขวัญให้เค้าไปนานๆเลยยยย🎁
+    </div>
+</div>
+    <button id="playButton">Play Music</button>
+        <audio id="bgMusic" loop>
+        <source src="song/mylove3.mp3" type="audio/mpeg" />
+        <source src="song/mylove3.ogg" type="audio/ogg" />
+        <source src="song/mylove3.wav" type="audio/wav" />
+        Your browser does not support the audio element.
+      </audio>
+
+    
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            document.body.appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 5000);
+        }
+        setInterval(createHeart, 500);
+
+        document.getElementById('playButton').addEventListener('click', function() {
+            let audio = document.getElementById("bgMusic");
+            audio.play().catch(error => console.log("Autoplay failed:", error));
+        });
+    </script>
+</body>
+</html>
